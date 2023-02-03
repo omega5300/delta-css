@@ -1,0 +1,41 @@
+// variables
+$model-value: .5rem;
+$image-size: 256px;
+
+/* cards */
+.card {
+  padding: $model-value;
+
+  &-body {
+    margin: $model-value;
+  }
+
+  &-footer {
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+  }
+
+  &-header {
+    margin-block: 0;
+    text-align: center;
+  }
+
+  &-image {
+    border-radius: 50%;
+    display: block;
+    filter: drop-shadow(0 0 0.55rem var(--primary-text));
+    height: $image-size;
+    margin-inline: auto;
+    object-fit: cover;
+    width: $image-size;
+  }
+
+  &-title {
+    padding-block: 12px;
+
+    font: {
+      size: 2em;
+      weight: 2em;
+    }
+  }
+}

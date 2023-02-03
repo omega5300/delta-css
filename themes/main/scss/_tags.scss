@@ -1,0 +1,265 @@
+// variables
+$line-height: 1.15;
+
+// placeholders
+%font-heading {
+  font-family: "VT323", monospace;
+}
+
+%font-weight {
+  font-weight: bolder;
+}
+
+%font-mono {
+  font: {
+    family: monospace, monospace;
+    size: 1em;
+  }
+}
+
+%text-script {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+%font-form {
+  font: {
+    family: inherit;
+    size: 100%;
+  }
+
+  line-height: $line-height;
+  margin: 0;
+}
+
+%overflow-form {
+  overflow: visible;
+}
+
+%text-transform-form {
+  text-transform: none;
+}
+
+%moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+%moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+%spin-button {
+  height: auto;
+}
+
+// tags
+* {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: $line-height;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  @extend %font-heading;
+}
+
+h2 {
+  @extend %font-heading;
+}
+
+h3 {
+  @extend %font-heading;
+}
+
+h4 {
+  @extend %font-heading;
+}
+
+h5 {
+  @extend %font-heading;
+}
+
+h6 {
+  @extend %font-heading;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font: {
+    family: monospace, monospace;
+    size: 1em;
+  }
+}
+
+abbr[title] {
+  border-bottom: none;
+
+  text: {
+    decoration: underline;
+    decoration: underline dotted;
+  }
+}
+
+b {
+  @extend %font-weight;
+}
+
+strong {
+  @extend %font-weight;
+}
+
+code {
+  @extend %font-mono;
+}
+
+kbd {
+  @extend %font-mono;
+}
+
+samp {
+  @extend %font-mono;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub {
+  bottom: -0.25em;
+  @extend %text-script;
+}
+
+sup {
+  top: -0.5em;
+  @extend %text-script;
+}
+
+button {
+  @extend %font-form;
+  @extend %overflow-form;
+  @extend %text-transform-form;
+
+  &::-moz-focus-inner {
+    @extend %moz-focus-inner;
+  }
+
+  &:-moz-focusring {
+    @extend %moz-focusring;
+  }
+}
+
+input {
+  @extend %font-form;
+  @extend %overflow-form;
+}
+
+optgroup {
+  @extend %font-form;
+}
+
+select {
+  @extend %font-form;
+  @extend %text-transform-form;
+}
+
+textarea {
+  @extend %font-form;
+}
+
+[type="button"] {
+  &::-moz-focus-inner {
+    @extend %moz-focus-inner;
+  }
+
+  &:-moz-focusring {
+    @extend %moz-focusring;
+  }
+}
+
+[type="reset"] {
+  &::-moz-focus-inner {
+    @extend %moz-focus-inner;
+  }
+
+  &:-moz-focusring {
+    @extend %moz-focusring;
+  }
+}
+
+[type="submit"] {
+  &::-moz-focus-inner {
+    @extend %moz-focus-inner;
+  }
+
+  &:-moz-focusring {
+    @extend %moz-focusring;
+  }
+}
+
+[type="number"] {
+  &::-webkit-inner-spin-button {
+    @extend %spin-button;
+  }
+  
+  &::-webkit-outer-spin-button {
+    @extend %spin-button;
+  }
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[type="search"] {
+  outline-offset: -2px;
+
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}

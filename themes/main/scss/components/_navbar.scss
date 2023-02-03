@@ -1,0 +1,80 @@
+// variables
+$display-flex: flex;
+$items-center: center;
+
+/* placeholders */
+%menu-bars {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  height: 3px;
+  background-color: var(--white-text);
+}
+
+%menu-bars-pseudo {
+  content: "";
+}
+
+%link-decoration {
+  text-decoration: none;
+}
+
+/* navbar */
+.navbar {
+  margin: 12px 8px;
+  display: $display-flex;
+  align-items: $items-center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  padding: 0.6rem;
+
+  
+  &-brand {
+    display: $display-flex;
+    gap: 8px;
+    align-items: $items-center;
+
+    @extend %link-decoration;
+
+    &-image {
+      display: block;
+      height: 32px;
+    }
+  }
+
+  &-bars {
+    top: 10px;
+
+    @extend %menu-bars;
+
+    &::after {
+      top: -10px;
+      @extend %menu-bars;
+      @extend %menu-bars-pseudo;
+    }
+
+    &::after {
+      top: 8px;
+      @extend %menu-bars;
+      @extend %menu-bars-pseudo;
+    }
+  }
+
+  &-menu {
+    margin-block: 0;
+    display: $display-flex;
+    list-style: none;
+    gap: .8rem;
+
+    &-btn {
+      display: none;
+      height: 26px;
+      width: 26px;
+    }
+
+    &-link {
+      color: var(--white-text);
+      @extend %link-decoration;
+    }
+  }
+}

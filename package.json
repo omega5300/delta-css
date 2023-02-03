@@ -1,0 +1,23 @@
+{
+  "name": "delta-css",
+  "version": "1.0.0",
+  "description": "CSS framework based on themes concept using the technologies: sass, tailwind and typescript.",
+  "main": "index.js",
+  "homepage": "https://delta-css.web.app/",
+  "scripts": {
+    "build:tailwind": "tailwind -i ./themes/light-dark/delta.tailwind.css -o ./themes/light-dark/delta.css",
+    "build:sass": "sass --no-source-map themes/**/scss/delta.scss:themes/**/delta.css",
+    "prefix": "npm run build:sass && postcss --no-map themes/**/delta.css --use=autoprefixer --output=themes/*/delta.css"
+  },
+  "keywords": ["delta css", "stack-analyze", "css themes"],
+  "author": "omega5300",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.57.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4"
+  }
+}

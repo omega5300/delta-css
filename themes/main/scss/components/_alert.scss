@@ -1,0 +1,96 @@
+// variables
+$primary-text: #fff;
+$secondary-text: #000;
+$alert-opacity: 0.5;
+
+// mixin
+@mixin alert-bg($bg-color, $txt-color) {
+  background-color: $bg-color;
+  color: $txt-color;
+}
+
+/* alert */
+.alert {
+  visibility: hidden;
+  min-width: 250px;
+  margin-right: 125px;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  right: 5%;
+  bottom: 10vh;
+  font-size: 1.05em;
+
+  box-shadow: 0 8px 32px 0 rgba(#1f2687, 0.37);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(#fff, 0.18) {
+    radius: 20px;
+  }
+
+  &__show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  &-primary {
+    @include alert-bg(rgba(#3880ff, $alert-opacity), $primary-text);
+  }
+
+  &-secondary {
+    @include alert-bg(rgba(#3dc2ff, $alert-opacity), $primary-text);
+  }
+
+  &-tertiary {
+    @include alert-bg(rgba(#5260ff, $alert-opacity), $primary-text);
+  }
+
+  &-success {
+    @include alert-bg(rgba(#2dd36f, $alert-opacity), $primary-text);
+  }
+
+  &-warning {
+    @include alert-bg(rgba(#ffc409, $alert-opacity), $secondary-text);
+  }
+
+  &-danger {
+    @include alert-bg(rgba(#ed445a, $alert-opacity), $primary-text);
+  }
+
+  &-dark {
+    @include alert-bg(rgba(#222428, $alert-opacity), $primary-text);
+  }
+
+  &-medium {
+    @include alert-bg(rgba(#92949c, $alert-opacity), $primary-text);
+  }
+
+  &-light {
+    @include alert-bg(rgba(#f4f5f8, $alert-opacity), $secondary-text);
+  }
+}
+
+/* alert animations */
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

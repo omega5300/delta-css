@@ -1,0 +1,13 @@
+/* modal */
+.modal {
+  color: var(--light);
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &-close {
+    color: var(--light);
+    cursor: pointer;
+  }
+}

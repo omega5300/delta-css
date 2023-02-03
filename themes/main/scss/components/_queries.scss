@@ -1,0 +1,86 @@
+// variables
+$colors: (
+  "primary": var(--primary),
+  "secondary": var(--secondary),
+  "tertiary": var(--tertiary),
+  "success": var(--success),
+  "warning": var(--warning),
+  "danger": var(--danger),
+  "dark": var(--dark),
+  "medium": var(--medium),
+  "light": var(--light)
+);
+
+// mixins
+@mixin btn-background($btn-color, $btn-txt-color) {
+  background-color: $btn-color;
+  color: $btn-txt-color;
+}
+
+/* media queries */
+@media(orientation: portrait) and (max-width: 649px) {
+  .navbar-menu {
+    flex: {
+      basis: 100%;
+      direction: column;
+    }
+
+    display: none;
+    margin-top: 12px;
+
+    &-active {
+      display: flex;
+    }
+
+    &-btn {
+      display: block;
+    }
+
+    &-item {
+      text-align: center;
+    }
+  }
+}
+
+/* print */
+@media print {
+  .print-hidden {
+    display: none;
+  }
+}
+
+@media(hover: hover) {
+  .btn {
+    &:hover:disabled {
+      background: none;
+      color: #777;
+    }
+
+    @each $color-name,
+    $color-value in $colors {
+      &-#{$color-name}:hover {
+        @if $color-name =='warning' or $color-name =='light' {
+          @include btn-background($color-value, var(--secondary-text));
+        }
+
+        @else {
+          @include btn-background($color-value, var(--primary-text));
+        }
+      }
+    }
+  }
+
+  .navbar {
+    &-brand {
+      filter: drop-shadow(0 0 0.55rem var(--secon-text));
+    }
+
+    &-menu-link:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .modal-close:hover {
+    filter: invert(.5);
+  }
+}

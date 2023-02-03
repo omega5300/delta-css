@@ -1,0 +1,9 @@
+/* glassmorphism */
+.glass {
+  background-color: var(--glass-background);
+  box-shadow: 0 8px 32px 0 rgba(#1f2687, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(#fff, 0.18) {
+    radius: 20px;
+  }
+}

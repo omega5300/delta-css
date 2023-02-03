@@ -1,0 +1,25 @@
+/* form */
+.input-field {
+  border: none;
+
+  &-text {
+    all: unset;
+    border-bottom: 1px solid var(--primary-text);
+    cursor: auto;
+
+    &::placeholder {
+      color: var(--primary-text);
+      padding-right: 0.5rem;
+    }
+  }
+
+  &-select {
+    background-color: rgba(#92949c, 0.25);
+    max-width: 100%;
+    padding-block: .5rem;
+  }
+
+  &-check {
+    accent-color: var(--secondary);
+  }
+}

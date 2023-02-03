@@ -1,0 +1,21 @@
+// tupple
+$colors: (
+  "primary": var(--primary),
+  "secondary": var(--secondary),
+  "tertiary": var(--tertiary),
+  "success": var(--success),
+  "warning": var(--warning),
+  "danger": var(--danger),
+  "dark": var(--dark),
+  "medium": var(--medium),
+  "light": var(--light)
+);
+
+// each loop
+/* text */
+@each $color-name,
+$color-value in $colors {
+    .#{$color-name} {
+        color: $color-value;
+    }
+}
